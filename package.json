@@ -1,24 +1,26 @@
 {
   "name": "mvvm",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/sschen86/mvvm.git",
-  "author": "zjfeihu <zjfeihu@126.com>",
-  "license": "BSD-2-Clause",
+  "version": "0.0.1",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "author": "sschen86@163.com",
+  "license": "MIT",
   "scripts": {
-    "dev": "webpack --watch --mode=development --devtool=eval-source-map"
+    "dev": "nodemon --exec babel-node ./playground/index",
+    "dev2": "rollup -c ./rollup.config.dev.js -w",
+    "build": "rm -rf dist/* && rollup -c ./rollup.config.build.js",
+    "test": "jest test"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/runtime": "^7.7.2",
-    "@smartx/eslint-config-tentative": "^1.2.1",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "node-lib-mods": "^0.0.4"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "keywords": [],
+  "repository": "https://github.com/sschen86/mvvm.git",
+  "files": [
+    "dist/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ]
 }

@@ -1,5 +1,5 @@
 // html编译器
-import compiler from '../../lib/view/compiler'
+import compiler from '../src/view/compiler'
 
 const ast = compiler(`
     <div>

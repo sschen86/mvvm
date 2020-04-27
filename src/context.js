@@ -48,7 +48,7 @@ const ContextProps = {
             if (rootKey in context.datas) {
                 return context.datas[rootKey]
             }
-        } while (context = context.parent)
+        } while ((context = context.parent))
     },
     getAllActions () {
         let context = this
@@ -63,7 +63,7 @@ const ContextProps = {
                     actions[name] = model[name]
                 }
             }
-        } while (context = context.parent)
+        } while ((context = context.parent))
         return actions
     },
 }
